@@ -18,6 +18,8 @@ function App() {
       placeholder: 'First Name',
       label: 'First Name',
       required: true,
+      errorMessage: 'You should not use numbers or special characters.',
+      pattern: '^[A-Za-z]{2,30}$',
     },
     {
       id: 2,
@@ -26,6 +28,8 @@ function App() {
       placeholder: 'Last Name',
       label: 'Last Name',
       required: true,
+      errorMessage: 'You should not use special characters.',
+      pattern: '^[A-Za-z]{2,30}$',
     },
     {
       id: 3,
@@ -34,6 +38,7 @@ function App() {
       placeholder: 'Email',
       label: 'Email',
       required: true,
+      errorMessage: 'Enter valid email address.',
     },
     {
       id: 4,
@@ -42,6 +47,10 @@ function App() {
       placeholder: 'Password',
       label: 'Password',
       required: true,
+      errorMessage:
+        'The password should be 8-30 characters and include at least 1 lower case letter, 1 upper case letter, 1 number and 1 special character.',
+      pattern:
+        '^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,30}$',
     },
     {
       id: 5,
@@ -50,6 +59,8 @@ function App() {
       placeholder: 'Confirm Password',
       label: 'Confirm Password',
       required: true,
+      errorMessage: 'The passwords do not match.',
+      pattern: formData.password,
     },
   ];
 

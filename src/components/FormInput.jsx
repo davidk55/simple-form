@@ -23,6 +23,9 @@ function FormInput(props) {
         aria-checked={focused.toString()}
         onFocus={() => props.name == 'confirmPassword' && setFocused(true)}
       />
+      <span className='text-red-500 inline-block invisible peer-aria-checked:peer-invalid:visible h-16 py-2 text-xs md:text-sm'>
+        {props.errorMessage}
+      </span>
     </div>
   );
 }
