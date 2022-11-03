@@ -1,9 +1,30 @@
+import { useState } from 'react';
 import FormInput from './FormInput';
+
 function App() {
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    password: '',
+    confirmPassword: '',
+  });
+
   function handleSubmit(event) {
     event.preventDefault();
     // submit to API
   }
+
+  function handleChange(event) {
+    const { name, value } = event.target;
+    setFormData((prevFormData) => {
+      return {
+        ...prevFormData,
+        [name]: value,
+      };
+    });
+  }
+
   return (
     <form
       onSubmit={handleSubmit}
